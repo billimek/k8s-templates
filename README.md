@@ -1,6 +1,6 @@
-##Documentation for a personal kubernetes cluster
+## Documentation for a personal kubernetes cluster
 
-##Layout is as follows:
+## Layout is as follows:
 
 * [cluster](cluster/) - cluster build-out information
 * [kubernetes-dashboard](kubernetes-dashboard/) - creating the kubernetes-dashboard
