@@ -1,0 +1,37 @@
+serviceType : NodePort
+replicas: 3
+debug:
+  enabled: false
+ssl:
+  enabled: true
+  enforced: true
+  insecureSkipVerify : true
+acme:
+  enabled: true
+  email: <some email>
+  staging: false
+  logging: true
+  challengeType: http-01
+  persistence:
+    enabled: true
+    storageClass: "rook-ceph-block"
+consul:
+  enabled: true
+  endpoint: consul-consul:8500
+dashboard:
+  enabled: true
+  domain: <some domain>
+  auth :
+    basic:
+       <some name>: <some password>
+service:
+  nodePorts:
+    http: "32033"
+    https: "32121"
+rbac:
+  enabled: true
+deployment:
+  hostPort:
+    httpEnabled: true
+    httpsEnabled: true
+    dashboardEnabled: true

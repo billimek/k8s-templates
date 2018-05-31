@@ -9,7 +9,7 @@ metadata:
     ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
 spec:
   rules:
-  - host: consul.k.eviljungle.com
+  - host: <some host>
     http:
       paths:
       - backend:
