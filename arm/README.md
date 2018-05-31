@@ -4,4 +4,4 @@
 * https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975
 * https://github.com/aaronkjones/rpi-k8s-node-prep
 
-Did not pursue but keeping here for future reference
+Did not pursue but keeping here for future reference incase I revisit using rpis as nodes
