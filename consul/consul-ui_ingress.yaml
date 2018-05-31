@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: consul-consul-ui
+  namespace: kube-system
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/auth-type: "basic"
+    ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
+spec:
+  rules:
+  - host: consul.k.eviljungle.com
+    http:
+      paths:
+      - backend:
+          serviceName: consul-consul-ui
+          servicePort: 8500
