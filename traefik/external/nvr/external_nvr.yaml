@@ -4,7 +4,7 @@ metadata:
   name: nvr
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.frontend.passHostHeader: "false"
+    traefik.frontend.passHostHeader: "true"
 spec:
   rules:
   - host: nvr.$DOMAIN
@@ -21,6 +21,6 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 19999
+    port: 81
   type: ExternalName
   externalName: nvr.local
