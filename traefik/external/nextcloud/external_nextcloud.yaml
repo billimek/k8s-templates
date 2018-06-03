@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nextcloud
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.passHostHeader: "false"
+spec:
+  rules:
+  - host: nextcloud.$DOMAIN
+    http:
+      paths:
+        - backend:
+            serviceName: nextcloud
+            servicePort: 8089
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextcloud
+spec:
+  ports:
+  - name: nextcloud
+    port: 8089
+  type: ExternalName
+  externalName: swarm

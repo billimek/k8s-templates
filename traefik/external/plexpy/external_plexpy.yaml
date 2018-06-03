@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: plexpy
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.passHostHeader: "false"
+spec:
+  rules:
+  - host: plexpy.$DOMAIN
+    http:
+      paths:
+        - backend:
+            serviceName: plexpy
+            servicePort: 8181
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: plexpy
+spec:
+  ports:
+  - name: plexpy
+    port: 8181
+  type: ExternalName
+  externalName: swarm

@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: deluge
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.passHostHeader: "false"
+spec:
+  rules:
+  - host: deluge.$DOMAIN
+    http:
+      paths:
+        - backend:
+            serviceName: deluge
+            servicePort: 8112
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deluge
+spec:
+  ports:
+  - name: deluge
+    port: 8112
+  type: ExternalName
+  externalName: swarm

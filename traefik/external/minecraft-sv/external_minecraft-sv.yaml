@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mcmap2
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.passHostHeader: "false"
+spec:
+  rules:
+  - host: mcmap2.$DOMAIN
+    http:
+      paths:
+        - backend:
+            serviceName: mcmap2
+            servicePort: 8124
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mcmap2
+spec:
+  ports:
+  - name: mcmap2
+    port: 8124
+  type: ExternalName
+  externalName: swarm
