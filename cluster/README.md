@@ -1,8 +1,5 @@
 ## HA cluster setup with kubeadm
 
-* https://joshrendek.com/2018/04/kubernetes-on-bare-metal/
-* https://kubernetes.io/docs/setup/independent/high-availability/
-
 Built-out the following cluster:
 
 * On `proxmox` (physical device running proxmox)
@@ -28,3 +25,9 @@ Built-out the following cluster:
     * `/dev/sdb` 100GB thin-provisioned drive for rook to use
     * ubuntu 18.04
     * will stay locked to proxmox and is also the node where the large NAS array is held by `proxmox`. will consider running workloads that need access to the NAS array only on this node
+
+
+Mostly followed the following two guides:
+
+* https://joshrendek.com/2018/04/kubernetes-on-bare-metal/
+* https://kubernetes.io/docs/setup/independent/high-availability/
