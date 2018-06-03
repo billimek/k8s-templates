@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pihole-nd
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.passHostHeader: "false"
+spec:
+  rules:
+  - host: pihole.nd.$DOMAIN
+    http:
+      paths:
+      - backend:
+          serviceName: pihole-nd
+          servicePort: 19999
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pihole-nd
+spec:
+  ports:
+  - name: http
+    port: 19999
+  type: ExternalName
+  externalName: pihole
