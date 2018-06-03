@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hass
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.passHostHeader: "true"
+spec:
+  rules:
+  - host: hass.$DOMAIN
+    http:
+      paths:
+        - backend:
+            serviceName: hass
+            servicePort: 8133
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hass
+spec:
+  ports:
+  - name: hass
+    port: 8133
+  type: ExternalName
+  externalName: swarm
