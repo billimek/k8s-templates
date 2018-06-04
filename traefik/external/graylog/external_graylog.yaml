@@ -4,7 +4,6 @@ metadata:
   name: graylog
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.frontend.passHostHeader: "true"
 spec:
   rules:
   - host: gl.$DOMAIN

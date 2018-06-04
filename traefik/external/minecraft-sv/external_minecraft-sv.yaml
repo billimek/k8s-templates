@@ -4,7 +4,6 @@ metadata:
   name: mcmap2
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.frontend.passHostHeader: "false"
 spec:
   rules:
   - host: mcmap2.$DOMAIN
