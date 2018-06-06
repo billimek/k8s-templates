@@ -14,9 +14,14 @@ export TRAEFIK_AUTH="username: somesecretmd5"
 
 Use `envsubst` at `kubectl` runtime to subsitute these with the proper values.  For example,
 
+Create `kapply` function to make this easier
+```
+kapply() {envsubst < "$@" | kubectl apply -f -}
+```
+
 ```
 source .env
-envsubst < traefik/external/sonarr/external_sonarr.yaml | kubectl apply -f -
+kapply traefik/external/sonarr/external_sonarr.yaml
 ```
 
 Otherwise, leverage helm charts and the built-in helm value-substitution mechanism.
@@ -28,8 +33,6 @@ Refer to and follow the following:
 1. [helm](helm/) - set-up helm
 1. [heapster](heapster/) - standing-up a heapster deployment for the dashboard to use for deeper metrics
 1. [secrets](secrets/) - for creating secrets used in the cluster
-1. [rook](rook/) - rook-ceph storage cluster for all the things to use for storage
-1. [consul](consul/) - consul KV store (using rook) for traefik to persist cert data in a HA deployment
 1. [traefik](traefik/) - traefik ingress & reverse proxy
 
 

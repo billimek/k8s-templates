@@ -7,6 +7,8 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/s
 kubectl apply -f dashboard-user.yaml
 ```
 
+Grab the token via `kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | cut -f1 -d ' ') | grep -E '^token' | cut -f2 -d':' | tr -d '\t'`
+
 After traefik was set-up, ran 
 
 ```
