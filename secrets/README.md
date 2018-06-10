@@ -4,4 +4,5 @@ Followed [this guide](https://docs.traefik.io/user-guide/kubernetes/#creating-th
 
 ```
 kubectl create secret generic traefik-basic-auth-jeff --from-file auth --namespace kube-system
+kubectl create secret generic traefik-basic-auth-jeff --from-file auth
 ```

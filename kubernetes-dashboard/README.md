@@ -7,8 +7,12 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/s
 kubectl apply -f dashboard-user.yaml
 ```
 
+Set session to never expire by editing the configuration and adding the following as a runtime argument: `"--token-ttl=0"`
+
+Grab the token via `kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | cut -f1 -d ' ') | grep -E '^token' | cut -f2 -d':' | tr -d '\t'`
+
 After traefik was set-up, ran 
 
 ```
-kubectl apply -f dashboard_ingress.yaml
+kubectl apply -f dashboard-ingress.yaml
 ```

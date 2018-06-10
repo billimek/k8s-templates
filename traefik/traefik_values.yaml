@@ -1,8 +1,11 @@
 image: containous/traefik # TODO: replace with 'traefik' when PR 3231 is baked into a release
-imageTag: c37b040217435c1f1683fa7466b6d4ac3002d878 # TODO: replace with latest or some other appropriate tag when PR 3231 is baked into a release
+# imageTag: experimental # TODO: replace with latest or some other appropriate tag when PR 3231 is baked into a release
+imageTag: experimental
 serviceType : NodePort
-externalTrafficPolicy: Local
-replicas: 3
+externalTrafficPolicy: Cluster
+replicas: 1
+memoryLimit: 100Mi
+cpuLimit: 1
 debug:
   enabled: true
 ssl:
@@ -14,13 +17,19 @@ acme:
   email: $EMAIL
   staging: false
   logging: true
-  challengeType: http-01
+  domains:
+    enabled: true
+    main: "*.$DOMAIN"
+    sans:
+      - "$DOMAIN"
+  challengeType: dns-01
+  dnsProvider:
+    name: digitalocean
+    digitalocean:
+      DO_AUTH_TOKEN: "$DO_AUTH_TOKEN"
   persistence:
     enabled: true
-    storageClass: "rook-ceph-block"
-consul:
-  enabled: true
-  endpoint: consul-consul:8500
+    storageClass: "nfs-storage-on-k8s-host"
 dashboard:
   enabled: true
   domain: t.k.$DOMAIN
