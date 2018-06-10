@@ -4,7 +4,7 @@ imageTag: experimental
 serviceType : NodePort
 externalTrafficPolicy: Cluster
 replicas: 1
-memoryLimit: 300Mi
+memoryLimit: 100Mi
 cpuLimit: 1
 debug:
   enabled: true
@@ -17,10 +17,19 @@ acme:
   email: $EMAIL
   staging: false
   logging: true
-  challengeType: http-01
+  domains:
+    enabled: true
+    main: "*.$DOMAIN"
+    sans:
+      - "$DOMAIN"
+  challengeType: dns-01
+  dnsProvider:
+    name: digitalocean
+    digitalocean:
+      DO_AUTH_TOKEN: "$DO_AUTH_TOKEN"
   persistence:
     enabled: true
-    storageClass: "managed-nfs-storage"
+    storageClass: "nfs-storage-on-k8s-host"
 dashboard:
   enabled: true
   domain: t.k.$DOMAIN

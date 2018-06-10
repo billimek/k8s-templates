@@ -1,8 +1,18 @@
 ## traefik 
 
+### installing local fork of traefik
+(inside the [fork of the helm chafrts repo](https://github.com/billimek/charts)):
 
 ```
-helm install --name traefik --namespace kube-system --values traefik_values.yaml stable/traefik
+cd charts/stable
+helm package traefik
+helm serve . &
+```
+
+### installing traefik chart
+
+```
+envsubst < traefik_values.yaml >! out.yaml && helm install --name traefik --namespace kube-system --values out.yaml local/traefik
 ```
 
 Regarding [traefik_values.yaml](traefik_values.yaml): Hard-coded the nodePorts so I don't need to keep changing haproxy's config.
@@ -20,6 +30,3 @@ imageTag: c37b040217435c1f1683fa7466b6d4ac3002d878
 the `imageTag: c37b040217435c1f1683fa7466b6d4ac3002d878` represents the custom docker build of the commit sha with the bugfix for PR https://github.com/containous/traefik/pull/3231.
 
 Once the next official release of traefik is shipped (with this fixed code) we can revert to the traefik:latest image or some variant.
-
-**Any external services that rely on websocket communication need to have their ingress annotation set to `traefik.frontend.passHostHeader: "true"`**  It appears that when traefik attempts to proxy websockets with this set to false, it causes all of the traefik pods to crash.
-
