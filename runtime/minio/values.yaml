@@ -1,0 +1,7 @@
+persistence:
+  existingClaim: "nfs-data-pvc"
+  subPath: "minio"
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik

@@ -2,7 +2,5 @@
 
 ```
 kapply media-pv.yaml
-kapply media-pvc.yaml
 kapply data-pv.yaml
-kapply data-pvc.yaml
 ```

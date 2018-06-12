@@ -12,3 +12,15 @@ spec:
   nfs:
     server: 10.0.7.7
     path: "/tank/media"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-media-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: media
+  resources:
+    requests:
+      storage: 1Mi
