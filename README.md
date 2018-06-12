@@ -33,7 +33,8 @@ Refer to and follow the following:
 1. [helm](helm/) - set-up helm
 1. [heapster](heapster/) - standing-up a heapster deployment for the dashboard to use for deeper metrics
 1. [secrets](secrets/) - for creating secrets used in the cluster
-1. [nfs-client](nfs-client/) - traefik ingress & reverse proxy
+1. [nfs-client](nfs-client/) - nfs-based dyanmic storage class for deployments to use
+1. [nfs-pv](nfs-pv/) - nfs-based persistent volumes for media nd data mounts from NAS
 1. [traefik](traefik/) - traefik ingress & reverse proxy
 
 

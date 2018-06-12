@@ -19,9 +19,10 @@ acme:
   logging: true
   domains:
     enabled: true
-    main: "*.$DOMAIN"
-    sans:
-      - "$DOMAIN"
+    domainsList:
+      - main: "*.$DOMAIN"
+      - sans:
+        - "$DOMAIN"
   challengeType: dns-01
   dnsProvider:
     name: digitalocean
