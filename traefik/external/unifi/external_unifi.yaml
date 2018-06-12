@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: unifi
+  name: external-unifi
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
@@ -10,13 +10,13 @@ spec:
     http:
       paths:
         - backend:
-            serviceName: unifi
+            serviceName: external-unifi
             servicePort: 8444
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: unifi
+  name: external-unifi
 spec:
   ports:
   - name: https

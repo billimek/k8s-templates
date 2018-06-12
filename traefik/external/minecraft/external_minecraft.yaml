@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: mcmap
+  name: external-mcmap
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
@@ -10,16 +10,16 @@ spec:
     http:
       paths:
         - backend:
-            serviceName: mcmap
+            serviceName: external-mcmap
             servicePort: 8123
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mcmap
+  name: external-mcmap
 spec:
   ports:
-  - name: mcmap
+  - name: external-mcmap
     port: 8123
   type: ExternalName
   externalName: swarm

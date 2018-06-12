@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: minio
+  name: external-minio
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
@@ -10,16 +10,16 @@ spec:
     http:
       paths:
         - backend:
-            serviceName: minio
+            serviceName: external-minio
             servicePort: 9002
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: minio
+  name: external-minio
 spec:
   ports:
-  - name: minio
+  - name: external-minio
     port: 9002
   type: ExternalName
   externalName: swarm

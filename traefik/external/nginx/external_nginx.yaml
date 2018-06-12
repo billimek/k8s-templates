@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: external-nginx
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    external-dns.alpha.kubernetes.io/target: $DOMAIN
+    traefik.ingress.kubernetes.io/error-pages: |-
+      404:
+        status:
+        - "404"
+        backend: external-nginx
+        query: /404.html
+      500:
+        status:
+        - "500-600"
+        backend: external-nginx
+        query: /500.html
+spec:
+  rules:
+  - host: $DOMAIN
+    http:
+      paths:
+        - backend:
+            serviceName: external-nginx
+            servicePort: 1888
+          path: /
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-nginx
+spec:
+  ports:
+  - name: external-nginx
+    port: 1888
+  type: ExternalName
+  externalName: swarm

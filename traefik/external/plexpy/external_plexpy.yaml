@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: plexpy
+  name: external-plexpy
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
@@ -10,16 +10,16 @@ spec:
     http:
       paths:
         - backend:
-            serviceName: plexpy
+            serviceName: external-plexpy
             servicePort: 8181
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: plexpy
+  name: external-plexpy
 spec:
   ports:
-  - name: plexpy
+  - name: external-plexpy
     port: 8181
   type: ExternalName
   externalName: swarm

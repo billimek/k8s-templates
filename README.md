@@ -21,7 +21,7 @@ kapply() {envsubst < "$@" | kubectl apply -f -}
 
 ```
 source .env
-kapply traefik/external/sonarr/external_sonarr.yaml
+kapply traefik/external/nvr/external_nvr.yaml
 ```
 
 Otherwise, leverage helm charts and the built-in helm value-substitution mechanism.
@@ -40,7 +40,7 @@ Refer to and follow the following:
 
 ## Installing the default runtime components
 
-1. TBD
+* [minio](/deployments/minio)
 
 ## Miscellaneous
 
