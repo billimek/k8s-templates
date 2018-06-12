@@ -1,0 +1,12 @@
+service:
+  type: NodePort
+persistence:
+  enabled: true
+  storageClass: "nfs-storage-on-k8s-host"
+resources:
+  limits:
+    memory: 4Gi
+    cpu: 4
+config:
+  opentsdb:
+    enabled: true

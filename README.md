@@ -41,6 +41,7 @@ Refer to and follow the following:
 ## Installing the default runtime components
 
 * [minio](/deployments/minio)
+* [influxdb](/deployments/influxdb)
 
 ## Miscellaneous
 
