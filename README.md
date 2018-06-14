@@ -42,6 +42,7 @@ Refer to and follow the following:
 
 * [minio](/deployments/minio)
 * [influxdb](/deployments/influxdb)
+* [chronograf](/deployments/chronograf)
 
 ## Miscellaneous
 
