@@ -8,3 +8,12 @@ ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: "traefik"
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://prom-prometheus-server
+      access: proxy
+      isDefault: true

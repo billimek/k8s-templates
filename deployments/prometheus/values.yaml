@@ -1,0 +1,18 @@
+alertmanager:
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "traefik"
+      ingress.kubernetes.io/auth-type: "basic"
+      ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
+  persistentVolume:
+    storageClass: "nfs-storage-on-k8s-host"
+server:
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "traefik"
+      ingress.kubernetes.io/auth-type: "basic"
+      ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
+  persistentVolume:
+    storageClass: "nfs-storage-on-k8s-host"
