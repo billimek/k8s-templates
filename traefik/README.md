@@ -12,10 +12,16 @@ helm serve . &
 ### installing traefik chart
 
 ```
-envsubst < traefik_values.yaml >! out.yaml && helm install --name traefik --namespace kube-system --values out.yaml local/traefik
+envsubst < values.yaml >! tmp_values.yaml && helm install --name traefik --namespace kube-system --values tmp_values.yaml local/traefik && rm tmp_values.yaml
 ```
 
-Regarding [traefik_values.yaml](traefik_values.yaml): Hard-coded the nodePorts so I don't need to keep changing haproxy's config.
+### upgrading the traefik chart
+
+```
+envsubst < values.yaml >! tmp_values.yaml && helm upgrade traefik --values tmp_values.yaml local/traefik && rm tmp_values.yaml
+```
+
+Regarding [values.yaml](values.yaml): Hard-coded the nodePorts so I don't need to keep changing haproxy's config.
 
 
 ### properly referencing external services

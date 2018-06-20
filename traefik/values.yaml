@@ -1,13 +1,13 @@
 image: containous/traefik # TODO: replace with 'traefik' when PR 3231 is baked into a release
 # imageTag: experimental # TODO: replace with latest or some other appropriate tag when PR 3231 is baked into a release
-imageTag: experimental
+imageTag: bddb4cc33c87108d6bc9ce1dc456024031dfe63b
 serviceType : NodePort
 externalTrafficPolicy: Cluster
 replicas: 1
 memoryLimit: 100Mi
 cpuLimit: 1
 debug:
-  enabled: true
+  enabled: false
 ssl:
   enabled: true
   enforced: true
@@ -23,6 +23,8 @@ acme:
       - main: "*.$DOMAIN"
       - sans:
         - "$DOMAIN"
+      - main: "*.k.$DOMAIN"
+      - main: "*.nd.$DOMAIN"
   challengeType: dns-01
   dnsProvider:
     name: digitalocean
