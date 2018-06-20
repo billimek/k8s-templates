@@ -44,6 +44,7 @@ Refer to and follow the following:
 * [influxdb](/deployments/influxdb)
 * [chronograf](/deployments/chronograf)
 * [grafana](/deployments/grafana)
+* [prometheus](/deployments/prometheus)
 
 ## Miscellaneous
 
