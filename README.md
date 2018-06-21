@@ -6,7 +6,7 @@ Refer to the [cluster](cluster/) - cluster build-out information
 ## kubectl and variable subsitution
 A local .gitignoreed `.env` file contains things like:
 
-```
+```bash
 export EMAIL="someone@somedomain.com"
 export DOMAIN="somedomain.com"
 export TRAEFIK_AUTH="username: somesecretmd5"
@@ -15,11 +15,12 @@ export TRAEFIK_AUTH="username: somesecretmd5"
 Use `envsubst` at `kubectl` runtime to subsitute these with the proper values.  For example,
 
 Create `kapply` function to make this easier
-```
+
+```bash
 kapply() {envsubst < "$@" | kubectl apply -f -}
 ```
 
-```
+```bash
 source .env
 kapply traefik/external/nvr/external_nvr.yaml
 ```
@@ -37,7 +38,6 @@ Refer to and follow the following:
 1. [nfs-pv](nfs-pv/) - nfs-based persistent volumes for media nd data mounts from NAS
 1. [traefik](traefik/) - traefik ingress & reverse proxy
 
-
 ## Installing the default runtime components
 
 * [minio](/deployments/minio)
@@ -45,6 +45,7 @@ Refer to and follow the following:
 * [chronograf](/deployments/chronograf)
 * [grafana](/deployments/grafana)
 * [prometheus](/deployments/prometheus)
+* [hubot](/deployments/hubot)
 
 ## Miscellaneous
 
