@@ -1,3 +1,5 @@
+image:
+  tag: latest
 persistence:
   existingClaim: "nfs-data-pvc"
   subPath: "minio"
@@ -5,3 +7,10 @@ ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: traefik
+keel:
+  policy: force
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

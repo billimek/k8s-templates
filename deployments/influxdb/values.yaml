@@ -10,3 +10,10 @@ resources:
 config:
   opentsdb:
     enabled: true
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

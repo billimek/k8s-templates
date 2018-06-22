@@ -16,3 +16,22 @@ server:
       ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
   persistentVolume:
     storageClass: "nfs-storage-on-k8s-host"
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: alertmanager.image.repository
+      tag: alertmanager.image.tag
+    - repository: configmapReload.image.repository
+      tag: configmapReload.image.tag
+    - repository: initChownData.image.repository
+      tag: initChownData.image.tag
+    - repository: kubeStateMetrics.image.repository
+      tag: kubeStateMetrics.image.tag
+    - repository: nodeExporter.image.repository
+      tag: nodeExporter.image.tag
+    - repository: server.image.repository
+      tag: server.image.tag
+    - repository: pushgateway.image.repository
+      tag: pushgateway.image.tag

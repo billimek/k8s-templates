@@ -7,3 +7,10 @@ ingress:
     kubernetes.io/ingress.class: "traefik"
     ingress.kubernetes.io/auth-type: "basic"
     ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
+keel:
+  policy: force
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

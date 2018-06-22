@@ -40,12 +40,14 @@ Refer to and follow the following:
 
 ## Installing the default runtime components
 
+* [keel](/deployments/keel)
 * [minio](/deployments/minio)
 * [influxdb](/deployments/influxdb)
 * [chronograf](/deployments/chronograf)
 * [grafana](/deployments/grafana)
 * [prometheus](/deployments/prometheus)
 * [hubot](/deployments/hubot)
+
 
 ## Miscellaneous
 

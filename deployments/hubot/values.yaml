@@ -8,3 +8,10 @@ hubot:
     HUBOT_GRAFANA_S3_BUCKET: 'public'
     HUBOT_GRAFANA_S3_REGION: 'us-east-1'
     HUBOT_HOME_ASSISTANT_EVENTS_DESTINATION: '#general'
+keel:
+  policy: force
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

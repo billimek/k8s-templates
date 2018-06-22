@@ -17,3 +17,10 @@ datasources:
       url: http://prom-prometheus-server
       access: proxy
       isDefault: true
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

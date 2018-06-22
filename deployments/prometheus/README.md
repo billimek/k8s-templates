@@ -1,6 +1,5 @@
 ## prometheus
 
-
 ### installing
 
 ```bash

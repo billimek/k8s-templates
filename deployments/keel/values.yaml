@@ -1,0 +1,9 @@
+helmProvider:
+  enabled: true
+slack:
+  enabled: true
+  botName: "keel"
+  channel: "#notifications"
+rbac:
+  enabled: true
+debug: true
