@@ -50,7 +50,7 @@ Refer to and follow the following:
 * [comcast](/deployments/comcast)
 * [speedtest](/deployments/speedtest)
 * [modem-stats](/deployments/modem-stats)
-
+* [uptimerobot](/deployments/uptimerobot)
 
 ## Miscellaneous
 

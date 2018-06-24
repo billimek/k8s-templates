@@ -1,0 +1,13 @@
+delay: 600
+config:
+    influxdb:
+        host: influxdb-influxdb
+        port: 8086
+        database: uptimerobot
+keel:
+  policy: force
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag
