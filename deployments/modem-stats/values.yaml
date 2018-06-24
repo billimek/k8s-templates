@@ -1,0 +1,14 @@
+debug: true
+config:
+    delay: 600
+    influxdb:
+        host: influxdb-influxdb
+        port: 8086
+        database: cable_modem_stats
+keel:
+  policy: force
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag
