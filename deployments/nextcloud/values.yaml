@@ -1,0 +1,33 @@
+image:
+  tag: 13.0.4
+mariadb:
+  persistence:
+    enabled: true
+    storageClass: "nfs-storage-on-k8s-host"
+    accessModes:
+      - ReadWriteOnce
+    size: 8Gi
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+nextcloudUsername: admin
+serviceType: ClusterIP
+persistence:
+  apache:
+    enabled: false
+  nextcloud:
+    enabled: true
+    existingClaim: "nfs-data-nextcloud-pvc"
+  extraExistingClaimMounts:
+    - name: external-mount
+      mountPath: /external/Audiobooks
+      existingClaim: nfs-media-audiobooks-pvc
+      readOnly: true
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

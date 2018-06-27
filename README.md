@@ -51,6 +51,7 @@ Refer to and follow the following:
 * [speedtest](/deployments/speedtest)
 * [modem-stats](/deployments/modem-stats)
 * [uptimerobot](/deployments/uptimerobot)
+* [nextcloud](/deployments/nextcloud)
 
 ## Miscellaneous
 
