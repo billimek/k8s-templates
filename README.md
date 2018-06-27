@@ -52,6 +52,7 @@ Refer to and follow the following:
 * [modem-stats](/deployments/modem-stats)
 * [uptimerobot](/deployments/uptimerobot)
 * [nextcloud](/deployments/nextcloud)
+* [mongodb](/deployments/mongodb)
 
 ## Miscellaneous
 
