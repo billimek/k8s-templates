@@ -1,0 +1,7 @@
+keel:
+  policy: force
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

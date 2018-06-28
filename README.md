@@ -53,6 +53,7 @@ Refer to and follow the following:
 * [uptimerobot](/deployments/uptimerobot)
 * [nextcloud](/deployments/nextcloud)
 * [mongodb](/deployments/mongodb)
+* [digitalocean-dyndns](/deployments/digitalocean-dyndns)
 
 ## Miscellaneous
 
