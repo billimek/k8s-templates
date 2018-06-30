@@ -1,0 +1,18 @@
+persistence:
+  enabled: true
+  storageClass: "nfs-storage-on-k8s-host"
+  accessMode: ReadWriteOnce
+  size: 5Gi
+TZ: "America/New York"
+runas_root: false
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

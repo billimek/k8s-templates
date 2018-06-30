@@ -54,6 +54,7 @@ Refer to and follow the following:
 * [nextcloud](/deployments/nextcloud)
 * [mongodb](/deployments/mongodb)
 * [digitalocean-dyndns](/deployments/digitalocean-dyndns)
+* [unifi](/deployments/unifi)
 
 ## Miscellaneous
 
