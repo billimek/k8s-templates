@@ -1,0 +1,26 @@
+persistence:
+  enabled: true
+  storageClass: "nfs-storage-on-k8s-host"
+  accessMode: ReadWriteOnce
+  size: 5Gi
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+extraEnv:
+  CAMERA_AUTH: ''
+configurator:
+  enabled: true
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "traefik"
+mqttService:
+  enabled: false
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

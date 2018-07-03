@@ -55,6 +55,7 @@ Refer to and follow the following:
 * [mongodb](/deployments/mongodb)
 * [digitalocean-dyndns](/deployments/digitalocean-dyndns)
 * [unifi](/deployments/unifi)
+* [home-assistant](/deployments/home-assistant)
 
 ## Miscellaneous
 
