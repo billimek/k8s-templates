@@ -2,6 +2,8 @@
 
 From [this guide](https://joshrendek.com/2018/04/kubernetes-on-bare-metal/):
 
+## Installing
+
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 kubectl apply -f dashboard-user.yaml
@@ -15,4 +17,11 @@ After traefik was set-up, ran
 
 ```
 kubectl apply -f dashboard-ingress.yaml
+```
+
+
+## (Alternative - helm chart) - did not use this
+
+```
+helm install --namespace kube-system --name kubernetes-dashboard stable/kubernetes-dashboard --values values.yaml --set ingress.hosts="{d.k.$DOMAIN}"
 ```
