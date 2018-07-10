@@ -1,6 +1,4 @@
-image: containous/traefik # TODO: replace with 'traefik' when PR 3231 is baked into a release
-# imageTag: experimental # TODO: replace with latest or some other appropriate tag when PR 3231 is baked into a release
-imageTag: bddb4cc33c87108d6bc9ce1dc456024031dfe63b
+imageTag: 1.7-alpine
 serviceType : NodePort
 externalTrafficPolicy: Cluster
 replicas: 1
