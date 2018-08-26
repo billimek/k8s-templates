@@ -4,7 +4,7 @@ persistence:
   accessMode: ReadWriteOnce
   size: 5Gi
 TZ: "America/New York"
-runas_root: false
+runAsRoot: false
 ingress:
   enabled: true
   annotations:

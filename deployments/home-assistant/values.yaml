@@ -15,8 +15,6 @@ configurator:
     enabled: true
     annotations:
       kubernetes.io/ingress.class: "traefik"
-mqttService:
-  enabled: false
 keel:
   policy: all
   trigger: poll
@@ -24,3 +22,6 @@ keel:
   images:
     - repository: image.repository
       tag: image.tag
+    - repository: configurator.image.repository
+      tag: configurator.image.tag
+
