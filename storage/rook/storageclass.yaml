@@ -1,0 +1,18 @@
+apiVersion: ceph.rook.io/v1beta1
+kind: Pool
+metadata:
+  name: replicapool
+  namespace: rook-ceph
+spec:
+  replicated:
+    size: 3
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+   name: rook-ceph-block
+provisioner: ceph.rook.io/block
+parameters:
+  pool: replicapool
+  #The value of "clusterNamespace" MUST be the same as the one in which your rook cluster exist
+  clusterNamespace: rook-ceph

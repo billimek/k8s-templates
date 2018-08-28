@@ -35,8 +35,9 @@ Refer to and follow the following:
 1. [heapster](heapster/) - standing-up a heapster deployment for the dashboard to use for deeper metrics
 1. [metrics-server](metrics-server/) - standing-up the kubernetes metrics-server for deeper metrics - this is supposed to replace heapster?
 1. [secrets](secrets/) - for creating secrets used in the cluster
-1. [nfs-client](nfs-client/) - nfs-based dyanmic storage class for deployments to use
-1. [nfs-pv](nfs-pv/) - nfs-based persistent volumes for media nd data mounts from NAS
+1. [rook](storage/rook/) - rook ceph replicated storage for HA
+1. [nfs-client](storage/nfs-client/) - nfs-based dyanmic storage class for deployments to use
+1. [nfs-pv](storage/nfs-pv/) - nfs-based persistent volumes for media nd data mounts from NAS
 1. [traefik](traefik/) - traefik ingress & reverse proxy
 
 ## Installing the default runtime components
