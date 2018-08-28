@@ -22,11 +22,11 @@ spec:
             - name: PROVISIONER_NAME
               value: billimek.com/nfs
             - name: NFS_SERVER
-              value: 10.0.7.17
+              value: 10.0.7.7
             - name: NFS_PATH
-              value: /srv
+              value: /tank/data/k8s-nfs
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 10.0.7.17
-            path: /srv
+            server: 10.0.7.7
+            path: /tank/data/k8s-nfs
