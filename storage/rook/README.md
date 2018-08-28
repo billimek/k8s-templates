@@ -73,3 +73,10 @@ rook-ceph-block   ceph.rook.io/block   7h
 storageclass.storage.k8s.io/rook-ceph-block patched
 ```
 
+### External access (traefik)
+
+After traefik is set-up, run
+
+```shell
+kubectl apply -f dashboard-ingress.yaml
+```

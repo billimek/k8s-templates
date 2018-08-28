@@ -24,11 +24,11 @@ Set session to never expire by editing the configuration and adding the followin
             ],
 ```
 
-Grab the token via `kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | cut -f1 -d ' ') | grep -E '^token' | cut -f2 -d':' | tr -d '\t'`
+Grab the token via `echo $(kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | cut -f1 -d ' ') | grep -E '^token' | cut -f2 -d':' | tr -d '\t')`
 
 ### External access (traefik)
 
-After traefik was set-up, ran 
+After traefik is set-up, run
 
 ```shell
 kubectl apply -f dashboard-ingress.yaml
