@@ -3,6 +3,7 @@
 ```shell
 kubectl apply -f media-pv.yaml
 kubectl apply -f data-pv.yaml
+kubectl apply -f backup-restic-pv.yaml
 kubectl apply -f data-nextcloud-pv.yaml
 kubectl apply -f media-audiobooks-pv.yaml
 ```

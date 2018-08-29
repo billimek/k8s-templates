@@ -38,6 +38,7 @@ Refer to and follow the following:
 1. [rook](storage/rook/) - rook ceph replicated storage for HA
 1. [nfs-client](storage/nfs-client/) - nfs-based dyanmic storage class for deployments to use
 1. [nfs-pv](storage/nfs-pv/) - nfs-based persistent volumes for media nd data mounts from NAS
+1. [stash](storage/stash/) - using stash to backup volumes
 1. [traefik](traefik/) - traefik ingress & reverse proxy
 
 ## Installing the default runtime components
