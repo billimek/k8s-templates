@@ -1,6 +1,6 @@
-## hubot
+# hubot
 
-### installation
+## installation
 
 ```bash
 helm install --name hubot stable/hubot --values values.yaml --set hubot.slackToken=$HUBOT_SLACK_TOKEN,hubot.config.HUBOT_GRAFANA_API_KEY=$HUBOT_GRAFANA_API_KEY,hubot.config.HUBOT_GRAFANA_S3_ACCESS_KEY_ID=$MINIO_ACCESS_KEY,hubot.config.HUBOT_GRAFANA_S3_SECRET_ACCESS_KEY=$MINIO_SECRET_KEY,hubot.config.HUBOT_HOME_ASSISTANT_HOST=$HUBOT_HOME_ASSISTANT_HOST,hubot.config.HUBOT_HOME_ASSISTANT_API_PASSWORD=$HUBOT_HOME_ASSISTANT_API_PASSWORD,hubot.config.HUBOT_GRAFANA_HOST=$HUBOT_GRAFANA_HOST,hubot.config.HUBOT_GRAFANA_S3_ENDPOINT=$HUBOT_GRAFANA_S3_ENDPOINT

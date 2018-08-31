@@ -3,7 +3,6 @@ image:
 mariadb:
   persistence:
     enabled: true
-    storageClass: "nfs-storage-on-k8s-host"
     accessModes:
       - ReadWriteOnce
     size: 8Gi

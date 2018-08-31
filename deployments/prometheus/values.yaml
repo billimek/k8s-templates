@@ -5,8 +5,6 @@ alertmanager:
       kubernetes.io/ingress.class: "traefik"
       ingress.kubernetes.io/auth-type: "basic"
       ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
-  persistentVolume:
-    storageClass: "nfs-storage-on-k8s-host"
 server:
   ingress:
     enabled: true
@@ -14,8 +12,6 @@ server:
       kubernetes.io/ingress.class: "traefik"
       ingress.kubernetes.io/auth-type: "basic"
       ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
-  persistentVolume:
-    storageClass: "nfs-storage-on-k8s-host"
 keel:
   policy: all
   trigger: poll

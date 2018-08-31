@@ -1,7 +1,7 @@
 rbac:
   create: true
 keel:
-  policy: all
+  policy: minor
   trigger: poll
   pollSchedule: "@every 1h"
   images:

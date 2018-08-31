@@ -1,6 +1,5 @@
 persistence:
   enabled: true
-  storageClass: "nfs-storage-on-k8s-host"
 ingress:
   enabled: true
   annotations:

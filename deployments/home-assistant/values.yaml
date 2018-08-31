@@ -1,6 +1,5 @@
 persistence:
   enabled: true
-  storageClass: "nfs-storage-on-k8s-host"
   accessMode: ReadWriteOnce
   size: 5Gi
 ingress:

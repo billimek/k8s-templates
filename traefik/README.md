@@ -9,7 +9,7 @@ helm install --name consul --namespace kube-system stable/consul
 ### installing traefik chart
 
 ```shell
-envsubst < values.yaml >! tmp_values.yaml && helm install --name traefik --namespace kube-system --values tmp_values.yaml stable/traefik --debug --dry-run && rm tmp_values.yaml
+envsubst < values.yaml >! tmp_values.yaml && helm install --name traefik --namespace kube-system --values tmp_values.yaml stable/traefik && rm tmp_values.yaml
 ```
 
 ### upgrading the traefik chart

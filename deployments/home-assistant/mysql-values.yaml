@@ -1,15 +1,12 @@
-service:
-  type: NodePort
+mysqlUser: "homeassistant"
+mysqlDatabase: "homeassistant"
 persistence:
   enabled: true
-  size: 50Gi
-resources:
-  limits:
-    memory: 4Gi
-    cpu: 4
-config:
-  opentsdb:
-    enabled: true
+  accessMode: ReadWriteOnce
+  size: 20Gi
+  annotations: {}
+metrics:
+  enabled: true
 keel:
   policy: all
   trigger: poll

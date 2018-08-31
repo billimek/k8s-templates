@@ -1,8 +1,7 @@
 persistence:
   enabled: true
-  storageClass: "nfs-storage-on-k8s-host"
   accessMode: ReadWriteOnce
-  size: 5Gi
+  size: 20Gi
 TZ: "America/New York"
 runAsRoot: false
 ingress:

@@ -29,6 +29,7 @@ acme:
         - "$DOMAIN"
       - main: "*.k.$DOMAIN"
       - main: "*.nd.$DOMAIN"
+      - main: "*.ha.$DOMAIN"
   challengeType: dns-01
   dnsProvider:
     name: digitalocean
@@ -36,7 +37,6 @@ acme:
       DO_AUTH_TOKEN: "$DO_AUTH_TOKEN"
   persistence:
     enabled: false
-    # storageClass: "nfs-storage-on-nas"
 dashboard:
   enabled: true
   domain: t.k.$DOMAIN
