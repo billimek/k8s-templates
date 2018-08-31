@@ -1,3 +1,6 @@
+securityContext:
+  runAsUser: 0
+  fsGroup: 0
 persistence:
   enabled: true
   accessModes:

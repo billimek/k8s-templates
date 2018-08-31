@@ -1,4 +1,4 @@
-# unifi
+# home assistant
 
 ## install mysql for recorder component
 
@@ -10,4 +10,11 @@ helm install --name hass-mysql stable/mysql --values mysql-values.yaml --set mys
 
 ```shell
 helm install --name hass billimek/home-assistant --values values.yaml --set ingress.hosts="{hass.$DOMAIN}",extraEnv.CAMERA_AUTH="$CAMERA_AUTH",configurator.ingress.hosts="{config.hass.$DOMAIN}",configurator.username="$HASS_CONFIG_USERNAME",configurator.password="$HASS_CONFIG_PASSWORD",configurator.hassApiPassword="$HASS_API_PASSWORD"
+```
+
+## backup (stash)
+
+```shell
+kubectl create -f stash.yaml
+kubectl create -f mysql-stash.yaml
 ```

@@ -1,13 +1,20 @@
-## prometheus
+# prometheus
 
-### installing
+## installing
 
-```bash
+```shell
 helm install stable/prometheus --name prom --values values.yaml --set alertmanager.ingress.hosts="{alert.prom.$DOMAIN}",server.ingress.hosts="{prom.$DOMAIN}"
 ```
 
-### upgrading
+## upgrading
 
-```bash
+```shell
 helm upgrade prom stable/prometheus --values values.yaml --set alertmanager.ingress.hosts="{alert.prom.$DOMAIN}",server.ingress.hosts="{prom.$DOMAIN}"
+```
+
+## backup (stash)
+
+```shell
+kubectl create -f stash-prometheus-alertmanager.yaml
+kubectl create -f stash-prometheus-server.yaml
 ```

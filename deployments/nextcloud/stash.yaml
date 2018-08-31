@@ -1,0 +1,26 @@
+apiVersion: stash.appscode.com/v1alpha1
+kind: Restic
+metadata:
+  name: stash-nextcloud
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: nextcloud-mariadb
+  fileGroups:
+  - path: /bitnami/mariadb
+    retentionPolicyName: 'keep-last-5'
+  backend:
+    local:
+      mountPath: /mnt/backup/
+      persistentVolumeClaim:
+          claimName: nfs-backup-restic-pv
+    storageSecretName: restic-secret
+  schedule: '@daily'
+  volumeMounts:
+  - mountPath: /bitnami/mariadb
+    name: data
+  retentionPolicies:
+  - name: 'keep-last-5'
+    keepLast: 5
+    prune: true
