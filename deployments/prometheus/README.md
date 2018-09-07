@@ -15,6 +15,5 @@ helm upgrade prom stable/prometheus --values values.yaml --set alertmanager.ingr
 ## backup (stash)
 
 ```shell
-kubectl create -f stash-prometheus-alertmanager.yaml
-kubectl create -f stash-prometheus-server.yaml
+kubectl create -f stash.yaml
 ```

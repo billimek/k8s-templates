@@ -1,7 +1,7 @@
 image:
   tag: latest
 persistence:
-  existingClaim: "nfs-data-pvc"
+  existingClaim: "nfs-data-pvc-10g"
   subPath: "minio"
 ingress:
   enabled: true
