@@ -2,12 +2,17 @@ persistence:
   enabled: true
   accessMode: ReadWriteOnce
   size: 20Gi
+  storageClass: rook-ceph-block
 TZ: "America/New York"
 runAsRoot: false
 ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: "traefik"
+controllerService:
+  nodePort: 32287
+stunService:
+  nodePort: 30443
 keel:
   policy: all
   trigger: poll

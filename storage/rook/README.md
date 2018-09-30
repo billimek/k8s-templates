@@ -79,7 +79,7 @@ storageclass.storage.k8s.io/rook-ceph-block patched
 After traefik is set-up, run
 
 ```shell
-kubectl apply -f dashboard-ingress.yaml
+kapply dashboard-ingress.yaml
 ```
 
 ## Rook Toolbox

@@ -6,6 +6,7 @@ persistence:
   accessModes:
     - ReadWriteOnce
   size: 10Gi
+  storageClassName: rook-ceph-block
 ingress:
   enabled: true
   annotations:

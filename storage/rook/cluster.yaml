@@ -57,17 +57,20 @@ metadata:
 spec:
   dataDirHostPath: /var/lib/rook
   serviceAccount: rook-ceph-cluster
+  mon:
+    count: 3
+    allowMultiplePerNode: true
   network:
-    hostNetwork: false
+    hostNetwork: true
   dashboard:
     enabled: true
   storage:
     useAllNodes: true
     useAllDevices: false
-    deviceFilter: sdb
+    deviceFilter: sdc
     location:
     config:
-      metadataDevice: sdc
+      metadataDevice: sdb
       databaseSizeMB: "1024"
       journalSizeMB: "1024"
       storeType: bluestore

@@ -3,7 +3,7 @@
 ### install consul
 
 ```shell
-helm install --name consul --namespace kube-system stable/consul
+helm install --name consul --namespace kube-system stable/consul --set StorageClass="rook-ceph-block"
 ```
 
 ### installing traefik chart
