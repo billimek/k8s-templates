@@ -3,7 +3,7 @@
 ## installing
 
 ```shell
-helm install --name unifi billimek/unifi --values values.yaml --set ingress.hosts="{unifi.$DOMAIN}"
+helm install --name unifi stable/unifi --values values.yaml --set ingress.hosts="{unifi.$DOMAIN}"
 ```
 
 ## backup (stash)

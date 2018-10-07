@@ -1,3 +1,5 @@
+image:
+  tag: 5.9
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
