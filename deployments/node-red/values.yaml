@@ -1,0 +1,17 @@
+persistence:
+  enabled: true
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    ingress.kubernetes.io/auth-type: "basic"
+    ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
+timezone: "America/New_York"
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  approvals: 1
+  images:
+    - repository: image.repository
+      tag: image.tag

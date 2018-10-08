@@ -59,6 +59,7 @@ Refer to and follow the following:
 * [digitalocean-dyndns](/deployments/digitalocean-dyndns)
 * [unifi](/deployments/unifi)
 * [home-assistant](/deployments/home-assistant)
+* [node-red](/deployments/node-red)
 
 ## Miscellaneous
 
