@@ -9,3 +9,9 @@ This is supposed to replace heapster - not sure how it comes into play with the 
 ```shell
 helm install --name metrics-server --namespace kube-system stable/metrics-server --values values.yaml
 ```
+
+### upgrading
+
+```shell
+helm upgrade metrics-server --namespace kube-system stable/metrics-server --reset-values --values values.yaml
+```

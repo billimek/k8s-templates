@@ -11,7 +11,7 @@ kubectl apply -f dashboard-user.yaml
 
 ### Accessing the dashboard
 
-Set session to never expire by editing the configuration and adding the following as a runtime argument: `"--token-ttl=0"` in the containers section,
+Set session to never expire by editing the deployment configuration and adding the following as a runtime argument: `"--token-ttl=0"` in the containers section,
 
 ```yaml
         "containers": [
@@ -25,6 +25,14 @@ Set session to never expire by editing the configuration and adding the followin
 ```
 
 Grab the token via `echo $(kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | cut -f1 -d ' ') | grep -E '^token' | cut -f2 -d':' | tr -d '\t')`
+
+### running multiple replicas
+
+Consider scaling the dashboard deployment to 3 replicas for better avalability
+
+```shell
+k -n kube-system scale --replicas=3 deployment/kubernetes-dashboard
+```
 
 ### External access (traefik)
 

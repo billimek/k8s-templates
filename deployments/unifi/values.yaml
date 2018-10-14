@@ -1,11 +1,10 @@
 image:
-  tag: 5.9
+  tag: 5.9.29
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
   size: 20Gi
-  storageClass: rook-ceph-block
-TZ: "America/New York"
+timezone: "America/New_York"
 runAsRoot: false
 ingress:
   enabled: true

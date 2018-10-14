@@ -10,20 +10,16 @@ Identify the drive(s) that will be used for OSDs (and metadata) on each host.  I
 
 * proxmox
   * OSD: /dev/sdd (250GB SSD)
-  * Metadata/Journal: /dev/nvme0n1p4 (10GB NVMe SSD)
 * proxmox-b
   * OSD: /dev/sda (500GB SSD)
-  * Metadata/Journal: /dev/nvme0n1p4 (10GB NVMe SSD)
 * proxmox-c
   * OSD: /dev/sda (500GB SSD)
-  * Metadata/Journal: /dev/nvme0n1p4 (10GB NVMe SSD)
 
 Identify the `/dev/disk/by-id` path for each of the above drives
 
 ### Prepare the drives
 
 * For entire drives (e.g. `/dev/sdd`): `sgdisk -Z /dev/<drive>` to completely wipe the drive alltogether.  I do not know if this will cause bad things to run on a partition of a drive, so have not tried
-* For partitions (e.g. `/dev/nvme0n1p4`): I use `parted` to delete and re-create the partition - not sure the appropriate path to take for a partition
 
 ### Add the drives to the VMs
 
@@ -31,22 +27,22 @@ For example, on `proxmox`:
 
 ```shell
 qm set 106 -scsi1 /dev/disk/by-id/wwn-0x5002538d41df6786
-qm set 106 -scsi2 /dev/disk/by-id/nvme-Samsung_SSD_960_EVO_500GB_S3X4NB0K206387N-part4
 ```
 
 * **scsi1** should translate to `/dev/sdb` in the VM
-* **scsi2** should translate to `/dev/sdc` in the VM
 
 ## Install Rook
 
 ### Install the rook ceph operator helm chart
 
-(the version will change - also consider installing alpha or beta instead for more stability?)
+Using the 'beta' chart repo for better stability.
+
+When using rancher, it is necessary to set the `agent.flexVolumeDirPath` due to [this](https://github.com/rook/rook/blob/master/Documentation/flexvolume.md#configuring-the-flexvolume-path)
 
 ```shell
-helm repo add rook-master https://charts.rook.io/master
+helm repo add rook-beta https://charts.rook.io/beta
 helm search rook-ceph
-helm install --name rook-ceph --namespace rook-ceph-system rook-master/rook-ceph --version v0.8.0-125.g2bcfb32
+helm install --name rook-ceph --namespace rook-ceph-system rook-beta/rook-ceph --set agent.flexVolumeDirPath="/var/lib/kubelet/volumeplugins"
 ```
 
 ### Install the rook ceph cluster
@@ -79,6 +75,7 @@ storageclass.storage.k8s.io/rook-ceph-block patched
 After traefik is set-up, run
 
 ```shell
+kubectl create secret generic traefik-basic-auth-jeff --from-file ../../secrets/auth --namespace rook-ceph
 kapply dashboard-ingress.yaml
 ```
 
@@ -115,3 +112,33 @@ drwx------ 2 gluster input     4096 Aug 28 15:50 mysql
 drwx------ 2 gluster input     4096 Aug 28 15:50 performance_schema
 drwx------ 2 gluster input     4096 Aug 28 15:50 wordpress
 ```
+
+## migrate data from filesystem to pvc used by a pod backed by rook-block-storage
+
+1. Make note of the pvc used by the target deployment, `k get persistentvolumeclaims`
+1. Scale-down the deployment to 0 replicas to ensure that nothing is accessing the data
+1. Log into the toolbox via `kubectl -n rook-ceph exec -it rook-ceph-tools bash`
+1. map and mount the pvc inside the rook toolbox:
+```
+[root@k8s-ha-c /]# rbd map replicapool/pvc-29ae49b2-cbbf-11e8-91c6-ce4d43fc4e66
+/dev/rbd3
+[root@k8s-ha-c /]# mkdir /tmp/rbd3
+[root@k8s-ha-c /]# mount /dev/rbd3 /tmp/rbd3/
+[root@k8s-ha-c /]# ls -al /tmp/rbd3/
+total 52
+drwxr-xr-x 4 root root  4096 Oct  9 12:34 .
+drwxrwxrwt 8 root root  4096 Oct  9 12:42 ..
+-rw------- 1 root root 32768 Oct  9 12:31 chronograf-v1.db
+drwx------ 2 root root 16384 Oct  9 12:30 lost+found
+```
+1. copy the data to this mounted path in the toolbox:
+```
+kubectl -n rook-ceph cp archived-default-chronograf-chronograf-pvc-9275a3f0-c018-11e8-91c6-ce4d43fc4e66 rook-ceph-tools:/tmp/rbd3/
+```
+1. in the toolbox, unmount and unmap the pvc:
+```
+[root@k8s-ha-c /]# cd
+[root@k8s-ha-c ~]# umount /tmp/rbd3/
+[root@k8s-ha-c ~]# rbd unmap /dev/rbd3
+```
+1. scale the deployment back to the original level

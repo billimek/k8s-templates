@@ -2,15 +2,21 @@
 
 Using the [nfs-client storage type](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client)
 
+### install
+
 Need to install nfs-client on each node (`apt-get install nfs-client`)
 
 ```shell
-kubectl apply -f deployment.yaml
-kubectl apply -f class.yaml
-kubectl create -f https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/nfs-client/deploy/auth/serviceaccount.yaml
-kubectl create -f https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/nfs-client/deploy/auth/clusterrole.yaml
-kubectl create -f https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/nfs-client/deploy/auth/clusterrolebinding.yaml
+helm install --name nfs-client-provisioner stable/nfs-client-provisioner --set nfs.server=10.0.10.7 --set nfs.path=/tank/data/k8s-nfs
 ```
+
+### upgrading
+
+```shell
+helm upgrade nfs-client-provisioner stable/nfs-client-provisioner --set nfs.server=10.0.10.7 --set nfs.path=/tank/data/k8s-nfs
+```
+
+### testing
 
 Test this with:
 
