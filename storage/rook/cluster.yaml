@@ -59,7 +59,7 @@ spec:
   serviceAccount: rook-ceph-cluster
   mon:
     count: 3
-    allowMultiplePerNode: true
+    allowMultiplePerNode: false
   network:
     hostNetwork: true
   dashboard:
@@ -67,10 +67,8 @@ spec:
   storage:
     useAllNodes: true
     useAllDevices: false
-    deviceFilter: sdc
+    deviceFilter: sdb
     location:
     config:
-      metadataDevice: sdb
       databaseSizeMB: "1024"
       journalSizeMB: "1024"
-      storeType: bluestore

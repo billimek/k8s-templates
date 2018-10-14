@@ -3,7 +3,6 @@ mysqlDatabase: "homeassistant"
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
-  storageClass: rook-ceph-block
   size: 20Gi
   annotations: {}
 metrics:

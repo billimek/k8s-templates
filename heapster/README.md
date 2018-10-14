@@ -1,7 +1,15 @@
 ## heapster for metrics on the dashboard 
 
-```
+### installation
+
+```shell
 helm install --name heapster --namespace kube-system stable/heapster --values values.yaml
+```
+
+### upgrading
+
+```shell
+helm upgrade heapster --namespace kube-system stable/heapster --reset-values --values values.yaml
 ```
 
 ### kubernetes 1.11+ issue
