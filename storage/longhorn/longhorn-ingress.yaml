@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: longhorn-ingress
+  namespace: longhorn-system
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/auth-type: "basic"
+    ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
+spec:
+  rules:
+  - host: longhorn.k.$DOMAIN
+    http:
+      paths:
+      - backend:
+          serviceName: longhorn-frontend
+          servicePort: 80
