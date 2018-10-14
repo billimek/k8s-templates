@@ -38,6 +38,7 @@ Refer to and follow the following:
 1. [rook](storage/rook/) - rook ceph replicated storage for HA
 1. [nfs-client](storage/nfs-client/) - nfs-based dyanmic storage class for deployments to use
 1. [nfs-pv](storage/nfs-pv/) - nfs-based persistent volumes for media nd data mounts from NAS
+1. [longhorn](storage/longhorn/) - experimental longhorn replicated storage solution with rancher
 1. [stash](storage/stash/) - using stash to backup volumes
 1. [traefik](traefik/) - traefik ingress & reverse proxy
 
@@ -54,12 +55,12 @@ Refer to and follow the following:
 * [speedtest](/deployments/speedtest)
 * [modem-stats](/deployments/modem-stats)
 * [uptimerobot](/deployments/uptimerobot)
-* [nextcloud](/deployments/nextcloud)
-* [mongodb](/deployments/mongodb)
 * [digitalocean-dyndns](/deployments/digitalocean-dyndns)
 * [unifi](/deployments/unifi)
 * [home-assistant](/deployments/home-assistant)
 * [node-red](/deployments/node-red)
+* [nextcloud](/deployments/nextcloud)
+
 
 ## Miscellaneous
 
