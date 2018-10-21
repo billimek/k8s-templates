@@ -1,4 +1,4 @@
-## HA cluster setup with kubeadm
+## HA cluster setup with rancher/rke
 
 ### VMs
 
