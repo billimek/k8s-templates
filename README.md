@@ -33,19 +33,18 @@ Refer to and follow the following:
 1. [kubernetes-dashboard](kubernetes-dashboard/) - creating the kubernetes-dashboard
 1. [helm](helm/) - set-up helm
 1. [heapster](heapster/) - standing-up a heapster deployment for the dashboard to use for deeper metrics
-1. [metrics-server](metrics-server/) - standing-up the kubernetes metrics-server for deeper metrics - this is supposed to replace heapster?
 1. [secrets](secrets/) - for creating secrets used in the cluster
+1. [metallb](metallb/) - bare-metal LoadBalancer solution
 1. [rook](storage/rook/) - rook ceph replicated storage for HA
 1. [nfs-client](storage/nfs-client/) - nfs-based dyanmic storage class for deployments to use
 1. [nfs-pv](storage/nfs-pv/) - nfs-based persistent volumes for media nd data mounts from NAS
-1. [longhorn](storage/longhorn/) - experimental longhorn replicated storage solution with rancher
 1. [stash](storage/stash/) - using stash to backup volumes
 1. [traefik](traefik/) - traefik ingress & reverse proxy
 
 ## Installing the default runtime components
 
 * [keel](/deployments/keel)
-* [minio](/deployments/minio)
+
 * [influxdb](/deployments/influxdb)
 * [chronograf](/deployments/chronograf)
 * [grafana](/deployments/grafana)
@@ -59,9 +58,11 @@ Refer to and follow the following:
 * [unifi](/deployments/unifi)
 * [home-assistant](/deployments/home-assistant)
 * [node-red](/deployments/node-red)
+* [minio](/deployments/minio)
 * [nextcloud](/deployments/nextcloud)
-
 
 ## Miscellaneous
 
-* [arm](arm/) - experiment to run a k8s node on a raspberry pi
+* [arm](arm/) - **NOT CURRENTLY USING** experiment to run a k8s node on a raspberry pi
+* [longhorn](storage/longhorn/) - **NOT CURRENTLY USING** experimental longhorn replicated storage solution with rancher
+
