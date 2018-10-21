@@ -1,0 +1,32 @@
+nodes:
+  - address: 10.0.7.17
+    internal_address: 10.0.10.17
+    hostname_override: rke-a
+    user: ubuntu
+    role: [controlplane,worker,etcd]
+  - address: 10.0.7.18
+    internal_address: 10.0.10.18
+    hostname_override: rke-b
+    user: ubuntu
+    role: [controlplane,worker,etcd]
+  - address: 10.0.7.19
+    internal_address: 10.0.10.19
+    hostname_override: rke-c
+    user: ubuntu
+    role: [controlplane,worker,etcd]
+ssh_agent_auth: true
+services:
+    kubelet:
+      extra_args:
+        read-only-port: 10255
+    etcd:
+      snapshot: true
+      creation: 6h
+      retention: 24h
+network:
+    plugin: flannel
+    options:
+      flannel_iface: ens19
+cluster_name: k8s
+ingress:
+    provider: nginx

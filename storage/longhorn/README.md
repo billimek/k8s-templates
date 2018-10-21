@@ -2,6 +2,8 @@
 
 https://github.com/rancher/longhorn
 
+**NOT USING THIS AT THE MOMENT**
+
 ## Install Longhorn
 
 Installed via the rancher 'catalog' UI.  Used the following settings:
