@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: test-claim
   annotations:
-    volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"
+    volume.beta.kubernetes.io/storage-class: "nfs-client"
 spec:
   accessModes:
     - ReadWriteMany
