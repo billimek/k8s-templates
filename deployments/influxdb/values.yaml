@@ -1,5 +1,6 @@
 service:
-  type: NodePort
+  type: LoadBalancer
+  loadBalancerIP: 10.0.7.81
 persistence:
   enabled: true
   size: 50Gi

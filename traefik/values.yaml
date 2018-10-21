@@ -1,5 +1,6 @@
-serviceType : NodePort
-externalTrafficPolicy: Cluster
+serviceType : LoadBalancer
+externalTrafficPolicy: Local
+loadBalancerIP: 10.0.7.80
 replicas: 3
 memoryLimit: 100Mi
 cpuLimit: 1
@@ -46,10 +47,6 @@ dashboard:
        $TRAEFIK_AUTH
   statistics:
     recentErrors: 25
-service:
-  nodePorts:
-    http: "32033"
-    https: "32121"
 deployment:
   hostPort:
     dashboardEnabled: true
@@ -59,5 +56,5 @@ keel:
   pollSchedule: "@every 1h"
   approvals: 1
   images:
-    - repository: image.repository
-      tag: image.tag
+    - repository: image
+      tag: imageTag

@@ -11,9 +11,14 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: "traefik"
 controllerService:
-  nodePort: 32287
+  type: LoadBalancer
+  loadBalancerIP: 10.0.7.82
 stunService:
-  nodePort: 30443
+  type: LoadBalancer
+  loadBalancerIP: 10.0.7.83
+discoveryService:
+  type: LoadBalancer
+  loadBalancerIP: 10.0.7.84
 keel:
   policy: all
   trigger: poll
