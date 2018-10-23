@@ -14,6 +14,12 @@ helm install --name consul --namespace kube-system stable/consul --values consul
 helm upgrade consul --namespace kube-system stable/consul --reset-values --values consul_values.yaml --set uiIngress.hosts="{consul.k.$DOMAIN}"
 ```
 
+### backup (stash)
+
+```shell
+kubectl create -f stash.yaml
+```
+
 ## traefik
 
 ### installing traefik chart
