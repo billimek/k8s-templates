@@ -3,9 +3,9 @@
 ## install
 
 ```shell
-helm install --name elasticsearch stable/elasticsearch
+helm install --name elasticsearch stable/elasticsearch --values elasticsearch-values.yaml
 helm install --name fluent-bit stable/fluent-bit --values fluent-bit-values.yaml
-helm install --name kibana stable/kibana --values values.yaml --set ingress.hosts="{kibana.$DOMAIN}"
+helm install --name kibana stable/kibana --values kibana-values.yaml --set ingress.hosts="{kibana.$DOMAIN}"
 ```
 
 ## upgrade
