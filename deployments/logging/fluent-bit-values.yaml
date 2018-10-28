@@ -1,0 +1,5 @@
+backend:
+  type: es
+  es:
+    host: elasticsearch-client
+    port: 9200
