@@ -31,6 +31,7 @@ helm install appscode/stash --name stash-operator --version 0.7.0 \
 
 ```shell
 kubectl create secret generic restic-secret --from-literal=RESTIC_PASSWORD=${RESTIC_PASSWORD}
+kubectl -n kube-system create secret generic restic-secret --from-literal=RESTIC_PASSWORD=${RESTIC_PASSWORD}
 ```
 
 ## Example usage
