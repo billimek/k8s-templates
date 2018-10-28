@@ -8,9 +8,9 @@ persistence:
 metrics:
   enabled: true
 keel:
-  policy: all
+  policy: minor
   trigger: poll
   pollSchedule: "@every 1h"
   images:
-    - repository: image.repository
-      tag: image.tag
+    - repository: image
+      tag: imageTag

@@ -1,3 +1,5 @@
+image:
+  tag: 0.81.0
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
@@ -23,4 +25,3 @@ keel:
       tag: image.tag
     - repository: configurator.image.repository
       tag: configurator.image.tag
-
