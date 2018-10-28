@@ -59,6 +59,7 @@ Refer to and follow the following:
 * [home-assistant](/deployments/home-assistant)
 * [node-red](/deployments/node-red)
 * [minio](/deployments/minio)
+* [logging](/deployments/logging)
 * [nextcloud](/deployments/nextcloud)
 
 ## Miscellaneous

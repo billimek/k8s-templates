@@ -1,0 +1,16 @@
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    ingress.kubernetes.io/protocol: "http"
+    ingress.kubernetes.io/auth-type: "basic"
+    ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
+env:
+  ELASTICSEARCH_URL: "http://elasticsearch-client:9200"
+keel:
+  policy: minor
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag
