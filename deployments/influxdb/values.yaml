@@ -4,9 +4,13 @@ service:
 persistence:
   enabled: true
   size: 50Gi
+  storageClass: nfs-client
 resources:
+  requests:
+    memory: 256Mi
+    cpu: 0.1
   limits:
-    memory: 4Gi
+    memory: 2Gi
     cpu: 4
 config:
   opentsdb:
@@ -16,5 +20,5 @@ keel:
   trigger: poll
   pollSchedule: "@every 1h"
   images:
-    - repository: image.repository
+    - repository: image.repo
       tag: image.tag
