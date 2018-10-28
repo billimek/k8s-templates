@@ -35,3 +35,12 @@ envsubst < values.yaml >! tmp_values.yaml && helm upgrade traefik --reset-values
 ```
 
 Regarding [values.yaml](values.yaml): Hard-coded the nodePorts so I don't need to keep changing haproxy's config.
+
+### set-up ingresses for external services
+
+```shell
+for i in external/*/*.yaml
+do
+kapply $i
+done
+```
