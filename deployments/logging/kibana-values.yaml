@@ -7,6 +7,8 @@ ingress:
     ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
 env:
   ELASTICSEARCH_URL: "http://elasticsearch-client:9200"
+plugins:
+  - https://github.com/sivasamyk/logtrail/releases/download/v0.1.30/logtrail-6.4.2-0.1.30.zip
 keel:
   policy: minor
   trigger: poll

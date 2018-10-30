@@ -8,6 +8,17 @@ helm install --name fluent-bit stable/fluent-bit --values fluent-bit-values.yaml
 helm install --name kibana stable/kibana --values kibana-values.yaml --set ingress.hosts="{kibana.$DOMAIN}"
 ```
 
+### logtrail
+
+Install logtrail 'settings' by uploading them to elasticsearch directly:
+
+```shell
+kubectl port-forward service/elasticsearch-client 9200:9200
+curl -XPUT 'localhost:9200/.logtrail/config/1?pretty' -H 'Content-Type: application/json' -d@logtrail.json
+```
+
+(requires a restart of kibana to pick-up changes)
+
 ## upgrade
 
 ```shell
