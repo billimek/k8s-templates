@@ -19,6 +19,8 @@ services:
     kubelet:
       extra_args:
         read-only-port: 10255
+      extra_binds:
+        - "/lib/modules:/lib/modules"
     etcd:
       snapshot: true
       creation: 6h
