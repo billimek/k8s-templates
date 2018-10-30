@@ -35,7 +35,7 @@ Refer to and follow the following:
 1. [heapster](heapster/) - standing-up a heapster deployment for the dashboard to use for deeper metrics
 1. [secrets](secrets/) - for creating secrets used in the cluster
 1. [metallb](metallb/) - bare-metal LoadBalancer solution
-1. [rook](storage/rook/) - rook ceph replicated storage for HA
+1. [external-ceph](storage/external-ceph/) - external ceph replicated storage for HA
 1. [nfs-client](storage/nfs-client/) - nfs-based dyanmic storage class for deployments to use
 1. [nfs-pv](storage/nfs-pv/) - nfs-based persistent volumes for media nd data mounts from NAS
 1. [stash](storage/stash/) - using stash to backup volumes
@@ -66,4 +66,4 @@ Refer to and follow the following:
 
 * [arm](arm/) - **NOT CURRENTLY USING** experiment to run a k8s node on a raspberry pi
 * [longhorn](storage/longhorn/) - **NOT CURRENTLY USING** experimental longhorn replicated storage solution with rancher
-
+* [rook](storage/rook/) - **NOT CURRENTLY USING** rook ceph replicated storage for HA

@@ -11,7 +11,7 @@ helm install --name kibana stable/kibana --values kibana-values.yaml --set ingre
 ## upgrade
 
 ```shell
-helm upgrade elasticsearch stable/elasticsearch
+helm upgrade elasticsearch stable/elasticsearch --reset-values --values elasticsearch-values.yaml
 helm upgrade fluent-bit stable/fluent-bit --reset-values --values fluent-bit-values.yaml
 helm upgrade kibana stable/kibana --reset-values --values kibana-values.yaml --set ingress.hosts="{kibana.$DOMAIN}"
 ```

@@ -1,3 +1,9 @@
+master:
+  persistence:
+    storageClass: "rbd"
+data:
+  persistence:
+    storageClass: "rbd"
 keel:
   policy: minor
   trigger: poll
