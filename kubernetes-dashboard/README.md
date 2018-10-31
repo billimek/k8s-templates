@@ -1,5 +1,7 @@
 ## kubernetes dashboard for GUI stuff
 
+![](https://i.imgur.com/Jl1blwE.png)
+
 From [this guide](https://joshrendek.com/2018/04/kubernetes-on-bare-metal/):
 
 ### Installing
