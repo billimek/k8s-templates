@@ -1,5 +1,7 @@
 # traefik for HA
 
+![](https://i.imgur.com/gwienvX.png)
+
 ## consul for k/v store for multi-node traefik support
 
 ### install the consul chart
