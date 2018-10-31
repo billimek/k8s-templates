@@ -1,5 +1,7 @@
 ## HA cluster setup with rancher/rke
 
+![](https://i.imgur.com/Qd7f8lx.png)
+
 ### VMs
 
 Built-out the following cluster:
