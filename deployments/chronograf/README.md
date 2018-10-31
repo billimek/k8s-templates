@@ -1,5 +1,7 @@
 # chronograf
 
+![](https://i.imgur.com/PPbhf5O.png)
+
 ## installing
 
 ```shell
