@@ -1,5 +1,7 @@
 # unifi
 
+![](https://i.imgur.com/uakfLZo.png)
+
 ## installing
 
 ```shell
