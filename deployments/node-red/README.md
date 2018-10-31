@@ -1,5 +1,7 @@
 # node-RED
 
+![](https://i.imgur.com/XxN4KJK.png)
+
 ## installing
 
 ```shell
