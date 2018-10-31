@@ -1,5 +1,7 @@
 # EFK Stack (elasticsearch, fluent-bit, kibana)
 
+![](https://i.imgur.com/HiHZpMa.png)
+
 ## install
 
 ```shell
