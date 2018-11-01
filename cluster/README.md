@@ -19,7 +19,7 @@ Built-out the following cluster:
     * `/dev/sda` 32GB thin-provisioned drive for OS
     * ubuntu 16.04
 * On `proxmox-c` (physical device running proxmox)
-  * master node `rke-b`
+  * master node `rke-c`
     * 8 CPU
     * 32GB memory
     * `/dev/sda` 32GB thin-provisioned drive for OS
