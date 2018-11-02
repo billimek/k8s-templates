@@ -1,5 +1,7 @@
 # grafana
 
+![](https://i.imgur.com/hTo49Uo.png)
+
 ## installing
 
 ```shell

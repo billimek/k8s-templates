@@ -1,5 +1,7 @@
 ## Documentation for a personal kubernetes cluster
 
+![](https://i.imgur.com/GcpsXlH.png)
+
 ## Building the cluster
 Refer to the [cluster](cluster/) - cluster build-out information
 

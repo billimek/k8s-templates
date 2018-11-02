@@ -1,5 +1,7 @@
 # home assistant
 
+![](https://i.imgur.com/OMwEZYO.png)
+
 ## install mysql for recorder component
 
 ```shell

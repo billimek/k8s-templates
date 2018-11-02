@@ -1,29 +1,28 @@
 ## HA cluster setup with rancher/rke
 
+![](https://i.imgur.com/Qd7f8lx.png)
+
 ### VMs
 
 Built-out the following cluster:
 
 * On `proxmox` (physical device running proxmox)
-  * master node `k8s-ha-a`
+  * master node `rke-a`
     * 8 CPU
     * 13GB memory
     * `/dev/sda` 32GB thin-provisioned drive for OS
-    * `/dev/sdb` 232.9G thin-provisioned drive for ceph OSD
     * ubuntu 16.04
 * On `proxmox-b` (physical device running proxmox)
-  * master node `k8s-ha-b`
+  * master node `rke-b`
     * 4 CPU
     * 8GB memory
     * `/dev/sda` 32GB thin-provisioned drive for OS
-    * `/dev/sdb` 465.8GB thin-provisioned drive for ceph OSD
     * ubuntu 16.04
 * On `proxmox-c` (physical device running proxmox)
-  * master node `k8s-ha-b`
+  * master node `rke-c`
     * 8 CPU
     * 32GB memory
     * `/dev/sda` 32GB thin-provisioned drive for OS
-    * `/dev/sdb` 465.8GB thin-provisioned drive for ceph OSD
     * ubuntu 16.04
 
 ### kubernetes cluster orchestration

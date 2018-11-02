@@ -1,5 +1,7 @@
 # prometheus
 
+![](https://i.imgur.com/xFOepF3.png)
+
 ## installing
 
 ```shell
