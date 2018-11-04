@@ -60,6 +60,7 @@ Refer to and follow the following:
 * [minio](/deployments/minio)
 * [logging](/deployments/logging)
 * [nextcloud](/deployments/nextcloud)
+* [deluge](/deployments/deluge)
 
 ## Miscellaneous
 
