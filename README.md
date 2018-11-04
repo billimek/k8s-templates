@@ -61,6 +61,7 @@ Refer to and follow the following:
 * [logging](/deployments/logging)
 * [nextcloud](/deployments/nextcloud)
 * [deluge](/deployments/deluge)
+* [minecraft](/deployments/minecraft)
 
 ## Miscellaneous
 
