@@ -64,6 +64,7 @@ Refer to and follow the following:
 * [nzbget](/deployments/nzbget)
 * [radarr](/deployments/radarr)
 * [sonarr](/deployments/sonarr)
+* [plex](/deployments/plex)
 * [minecraft](/deployments/minecraft)
 
 ## Miscellaneous
