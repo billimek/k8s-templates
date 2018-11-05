@@ -62,6 +62,7 @@ Refer to and follow the following:
 * [nextcloud](/deployments/nextcloud)
 * [deluge](/deployments/deluge)
 * [nzbget](/deployments/nzbget)
+* [radarr](/deployments/radarr)
 * [minecraft](/deployments/minecraft)
 
 ## Miscellaneous

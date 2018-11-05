@@ -2,6 +2,7 @@
 
 ```shell
 kubectl apply -f media-pv.yaml
+kubectl apply -f media-downloads-pv.yaml
 kubectl apply -f data-pv.yaml
 kubectl apply -f backup-restic-pv.yaml
 kubectl apply -f backup-restic-pv-kube-system.yaml
