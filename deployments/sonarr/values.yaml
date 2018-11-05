@@ -1,0 +1,24 @@
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+timezone: "America/New_York"
+persistence:
+  config:
+    enabled: true
+  downloads:
+    enabled: true
+    existingClaim: nfs-media-downloads-pvc-10g
+    accessMode: ReadWriteMany
+  tv:
+    enabled: true
+    existingClaim: nfs-media-pvc-10g
+    subPath: Videos
+    accessMode: ReadWriteMany
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

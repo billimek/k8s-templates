@@ -63,6 +63,7 @@ Refer to and follow the following:
 * [deluge](/deployments/deluge)
 * [nzbget](/deployments/nzbget)
 * [radarr](/deployments/radarr)
+* [sonarr](/deployments/sonarr)
 * [minecraft](/deployments/minecraft)
 
 ## Miscellaneous
