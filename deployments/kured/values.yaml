@@ -1,0 +1,9 @@
+image:
+  tag: 1.1.0
+keel:
+  policy: minor
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

@@ -66,6 +66,7 @@ Refer to and follow the following:
 * [sonarr](/deployments/sonarr)
 * [plex](/deployments/plex)
 * [minecraft](/deployments/minecraft)
+* [kured](deployments/kured)
 
 ## Miscellaneous
 
