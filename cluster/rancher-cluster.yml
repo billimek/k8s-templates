@@ -23,8 +23,8 @@ services:
         - "/lib/modules:/lib/modules"
     etcd:
       snapshot: true
-      creation: 6h
-      retention: 24h
+      creation: 12h
+      retention: 7d
 network:
     plugin: flannel
     options:

@@ -3,3 +3,10 @@ backend:
   es:
     host: elasticsearch-client
     port: 9200
+keel:
+  policy: minor
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.fluent_bit.repository
+      tag: image.fluent_bit.tag
