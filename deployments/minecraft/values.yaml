@@ -8,9 +8,9 @@ minecraftServer:
   difficulty: normal
   serviceType: LoadBalancer
 keel:
-  policy: all
+  policy: force
   trigger: poll
   pollSchedule: "@every 1h"
   images:
-    - repository: image.repository
-      tag: image.tag
+    - repository: image
+      tag: imageTag

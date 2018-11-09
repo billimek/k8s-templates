@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/instance: plex
+      app: kube-plex
   fileGroups:
   - path: /config
     retentionPolicyName: 'keep-last-5'

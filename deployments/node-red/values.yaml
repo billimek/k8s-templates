@@ -8,7 +8,7 @@ ingress:
     ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
 timezone: "America/New_York"
 keel:
-  policy: minor
+  policy: "glob:*.*.*-v8"
   trigger: poll
   pollSchedule: "@every 1h"
   approvals: 1

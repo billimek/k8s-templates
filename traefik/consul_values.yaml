@@ -10,5 +10,5 @@ keel:
   pollSchedule: "@every 1h"
   approvals: 1
   images:
-    - repository: image.repository
-      tag: image.tag
+    - repository: Image
+      tag: ImageTag

@@ -1,15 +1,9 @@
 # radarr movie downloader
 
-## installing
+## installing / upgrading
 
 ```shell
-helm install --name radarr billimek/radarr --values values.yaml --set ingress.hosts="{radarr.$DOMAIN}"
-```
-
-## upgrading
-
-```shell
-helm upgrade radarr billimek/radarr --reset-values --values values.yaml --set ingress.hosts="{radarr.$DOMAIN}"
+helm upgrade --install radarr billimek/radarr --reset-values --values values.yaml --set ingress.hosts="{radarr.$DOMAIN}"
 ```
 
 ## backup (stash)

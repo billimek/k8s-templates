@@ -16,6 +16,7 @@ persistence:
     claimName: nfs-data-pvc-10g
     subPath: plex
   data:
+    enabled: true
     claimName: nfs-media-pvc-10g
 keel:
   policy: all

@@ -4,3 +4,12 @@ configInline:
       protocol: layer2
       addresses:
       - 10.0.7.80-10.0.7.95
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: controller.image.repository
+      tag: controller.image.tag
+    - repository: speaker.image.repository
+      tag: speaker.image.tag

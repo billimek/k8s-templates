@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: nzbget
+      app.kubernetes.io/instance: nzbget
   fileGroups:
   - path: /config
     retentionPolicyName: 'keep-last-5'

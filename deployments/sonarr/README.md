@@ -1,15 +1,9 @@
 # sonarr tv show downloader
 
-## installing
+## installing / upgrading
 
 ```shell
-helm install --name sonarr billimek/sonarr --values values.yaml --set ingress.hosts="{sonarr.$DOMAIN}"
-```
-
-## upgrading
-
-```shell
-helm upgrade sonarr billimek/sonarr --reset-values --values values.yaml --set ingress.hosts="{sonarr.$DOMAIN}"
+helm upgrade --install sonarr billimek/sonarr --reset-values --values values.yaml --set ingress.hosts="{sonarr.$DOMAIN}"
 ```
 
 ## backup (stash)
