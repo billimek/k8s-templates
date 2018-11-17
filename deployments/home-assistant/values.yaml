@@ -1,9 +1,10 @@
 image:
-  tag: 0.81.0
+  tag: 0.82.1
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
   size: 10Gi
+  storageClass: nfs-client
 ingress:
   enabled: true
   annotations:
@@ -12,6 +13,8 @@ extraEnv:
   CAMERA_AUTH: ''
 configurator:
   enabled: true
+  image:
+    tag: 0.3.3-x86_64
   ingress:
     enabled: true
     annotations:
