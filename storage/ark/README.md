@@ -7,7 +7,7 @@ Must have previously installed [minio](../../deployments/minio/)
 ```shell
 k create -f 00-prereqs.yaml
 kapply 00-secrets.yaml
-k create -f 10-ark-config.yaml
+kapply 05-ark-backupstoragelocation.yaml
 k create -f 20-ark-deployment.yaml
 k create -f 30-restic-daemonset.yaml
 ```

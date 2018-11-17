@@ -1,4 +1,4 @@
-# Copyright 2017 the Heptio Ark contributors.
+# Copyright 2018 the Heptio Ark contributors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,24 +14,20 @@
 
 ---
 apiVersion: ark.heptio.com/v1
-kind: Config
+kind: BackupStorageLocation
 metadata:
-  namespace: heptio-ark
   name: default
-backupStorageProvider:
-  name: aws
-  bucket: ark
-  # Uncomment the below line to enable restic integration.
-  # The format for resticLocation is <bucket>[/<prefix>],
-  # e.g. "my-restic-bucket" or "my-restic-bucket/repos".
-  # This MUST be a different bucket than the main Ark bucket
-  # specified just above.
-  resticLocation: ark-restic
+  namespace: heptio-ark
+spec:
+  provider: aws
+  objectStorage:
+    bucket: ark
   config:
     region: us-east-1
     s3ForcePathStyle: "true"
     s3Url: http://minio.default.svc:9000
-backupSyncPeriod: 1m
-gcSyncPeriod: 1m
-scheduleSyncPeriod: 1m
-restoreOnlyMode: false
+    # Uncomment the following line and provide the value of an externally
+    # available URL for downloading logs, running Ark describe, and more.
+    publicUrl: https://minio.${DOMAIN}
+    
+
