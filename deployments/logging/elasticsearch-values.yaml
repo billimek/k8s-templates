@@ -1,9 +1,9 @@
+image:
+  tag: "6.4.3"
 master:
   persistence:
-    storageClass: "rbd"
-data:
-  persistence:
-    storageClass: "rbd"
+    enabled: true
+    storageClass: "longhorn"
 keel:
   policy: minor
   trigger: poll

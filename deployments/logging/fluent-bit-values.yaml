@@ -1,7 +1,7 @@
 backend:
   type: es
   es:
-    host: elasticsearch-client
+    host: elasticsearch
     port: 9200
 keel:
   policy: minor
