@@ -38,5 +38,5 @@ Follow the instructions from [the guide](https://github.com/kubernetes-incubator
 
 ```shell
 kubectl apply -f ./rbac
-kubectl applt -f storageclass.yaml
+kubectl apply -f storageclass.yaml
 ```

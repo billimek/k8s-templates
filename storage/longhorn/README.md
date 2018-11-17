@@ -16,7 +16,7 @@ Installed via the rancher 'catalog' UI.  Used the following settings:
 ### Setting-up traefik ingress for longhorn UI
 
 ```shell
-k create secret generic traefik-basic-auth-jeff --from-file ../../auth --namespace longhorn-system
+k create secret generic traefik-basic-auth-jeff --from-file ../../secrets/auth --namespace longhorn-system
 kapply longhorn-ingress.yaml
 ```
 
