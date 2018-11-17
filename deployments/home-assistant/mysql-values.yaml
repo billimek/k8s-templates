@@ -5,6 +5,7 @@ persistence:
   accessMode: ReadWriteOnce
   size: 20Gi
   annotations: {}
+  storageClass: longhorn
 metrics:
   enabled: true
 keel:
