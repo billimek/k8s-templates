@@ -296,6 +296,15 @@ serverFiles:
           - targets:
             - stash-operator:56789
 
+      - job_name: 'wmi-exporter-scrape'
+        metrics_path: '/metrics'
+        params:
+          format: [prometheus]
+        honor_labels: true
+        static_configs:
+          - targets:
+            - nvr-server:9182
+
 keel:
   policy: all
   trigger: poll
