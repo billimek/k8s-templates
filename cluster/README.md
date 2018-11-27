@@ -10,19 +10,19 @@ Built-out the following cluster:
   * master node `rke-a`
     * 8 CPU
     * 13GB memory
-    * `/dev/sda` 32GB thin-provisioned drive for OS
+    * `/dev/sda` 196GB thin-provisioned drive for OS
     * ubuntu 16.04
 * On `proxmox-b` (physical device running proxmox)
   * master node `rke-b`
     * 4 CPU
-    * 8GB memory
-    * `/dev/sda` 32GB thin-provisioned drive for OS
+    * 13GB memory
+    * `/dev/sda` 196GB thin-provisioned drive for OS
     * ubuntu 16.04
 * On `proxmox-c` (physical device running proxmox)
   * master node `rke-c`
     * 8 CPU
     * 32GB memory
-    * `/dev/sda` 32GB thin-provisioned drive for OS
+    * `/dev/sda` 196GB thin-provisioned drive for OS
     * ubuntu 16.04
 
 ### kubernetes cluster orchestration

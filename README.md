@@ -1,6 +1,6 @@
 ## Documentation for a personal kubernetes cluster
 
-![](https://i.imgur.com/GcpsXlH.png)
+![](https://i.imgur.com/FxTIC6p.png)
 
 ## Building the cluster
 Refer to the [cluster](cluster/) - cluster build-out information
@@ -33,9 +33,7 @@ Otherwise, leverage helm charts and the built-in helm value-substitution mechani
 Refer to and follow the following:
 
 1. [kubernetes-dashboard](kubernetes-dashboard/) - creating the kubernetes-dashboard
-1. [helm](helm/) - set-up helm
 1. [heapster](heapster/) - standing-up a heapster deployment for the dashboard to use for deeper metrics
-1. [secrets](secrets/) - for creating secrets used in the cluster
 1. [metallb](metallb/) - bare-metal LoadBalancer solution
 1. [storage](storage/) - storage solutions
 1. [traefik](traefik/) - traefik ingress & reverse proxy
