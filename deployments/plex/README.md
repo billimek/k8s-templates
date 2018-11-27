@@ -1,5 +1,8 @@
 # Plex Media Server
 
+![](https://i.imgur.com/nDyS9OA.jpg)
+
+
 ## installing
 
 ```shell

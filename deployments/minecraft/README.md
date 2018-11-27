@@ -1,5 +1,7 @@
 # Minecraft
 
+![](https://i.imgur.com/zBha0RP.png)
+
 ## installing
 
 ```shell
