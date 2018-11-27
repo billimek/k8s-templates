@@ -1,3 +1,4 @@
+imageTag: 1.7.4
 serviceType : LoadBalancer
 externalTrafficPolicy: Local
 loadBalancerIP: 10.0.7.80
@@ -17,7 +18,7 @@ kvprovider:
   consul:
     endpoint: consul:8500
     watch: true
-    prefix: "\"traefik\""
+    prefix: traefik
 acme:
   enabled: true
   email: $EMAIL
@@ -50,6 +51,9 @@ dashboard:
 deployment:
   hostPort:
     dashboardEnabled: true
+forwardAuth:
+  address: "http://auth0-forwardauth.default.svc.cluster.local/authorize"
+  trustForwardHeader: true
 keel:
   policy: all
   trigger: poll

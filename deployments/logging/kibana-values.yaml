@@ -5,8 +5,9 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: "traefik"
     ingress.kubernetes.io/protocol: "http"
-    ingress.kubernetes.io/auth-type: "basic"
-    ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
+    ingress.kubernetes.io/auth-type: "forward"
+    ingress.kubernetes.io/auth-url: "http://auth0-forwardauth.default.svc.cluster.local/authorize"
+    ingress.kubernetes.io/auth-trust-headers: "true"
 env:
   ELASTICSEARCH_URL: "http://elasticsearch:9200"
 plugins:
