@@ -1,0 +1,22 @@
+btService:
+  type: LoadBalancer
+  port: 51413
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    ingress.kubernetes.io/auth-type: "basic"
+    ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
+timezone: "America/New_York"
+persistence:
+  downloads:
+    enabled: true
+    existingClaim: nfs-media-pvc-10g
+    subPath: Downloads
+keel:
+  policy: all
+  trigger: poll
+  pollSchedule: "@every 1h"
+  images:
+    - repository: image.repository
+      tag: image.tag

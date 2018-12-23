@@ -59,6 +59,7 @@ Refer to and follow the following:
 * [logging](/deployments/logging)
 * [nextcloud](/deployments/nextcloud)
 * [deluge](/deployments/deluge)
+* [rutorrent](/deployments/rutorrent)
 * [nzbget](/deployments/nzbget)
 * [radarr](/deployments/radarr)
 * [sonarr](/deployments/sonarr)
