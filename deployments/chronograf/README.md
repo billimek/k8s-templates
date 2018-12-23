@@ -5,7 +5,7 @@
 ## installing
 
 ```shell
-helm install --name chronograf stable/chronograf --values values.yaml --set ingress.hostname="chronograf.$DOMAIN"
+helm upgrade --install chronograf stable/chronograf --reset-values --values values.yaml --set ingress.hostname="chronograf.$DOMAIN"
 ```
 
 ## backup (stash)

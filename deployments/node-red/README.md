@@ -5,7 +5,7 @@
 ## installing
 
 ```shell
-helm install --name node-red billimek/node-red --values values.yaml --set ingress.hosts="{node-red.$DOMAIN}"
+helm upgrade --install node-red stable/node-red --reset-values --values values.yaml --set ingress.hosts="{node-red.$DOMAIN}"
 ```
 
 ### installing custom nodes
@@ -17,12 +17,6 @@ cd /data
 npm install node-red-contrib-home-assistant
 exit
 k delete pod/$POD_NAME
-```
-
-## upgrading
-
-```shell
-helm upgrade node-red billimek/node-red --reset-values --values values.yaml --set ingress.hosts="{node-red.$DOMAIN}"
 ```
 
 ## backup (stash)

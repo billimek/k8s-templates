@@ -4,10 +4,10 @@ https://metallb.universe.tf/installation/
 
 ## installation
 
-This installs MetaLB using the layer2 mode with reserved service IPs being 10.0.7.80-10.0.7.95.
+This installs MetaLB using the layer2 mode with reserved service IPs being 10.0.6.10-10.0.6.250.
 
 ```shell
-helm install --name metallb stable/metallb -f values.yaml
+helm upgrade --install metallb stable/metallb --reset-values -f values.yaml
 ```
 
 The router & haproxy LB needs associated changes to leverage the services at the new IP addresses.  For example:

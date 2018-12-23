@@ -40,3 +40,24 @@ Follow the instructions from [the guide](https://github.com/kubernetes-incubator
 kubectl apply -f ./rbac
 kubectl apply -f storageclass.yaml
 ```
+
+## Working with rbd volumes
+
+Example of finding and mounting a pvc in the proxmox host:
+
+```shell
+root@proxmox:/# rbd list kube
+kubernetes-dynamic-pvc-2672ff6d-f6b5-11e8-a795-0a580a2a001c
+root@proxmox:/# rbd map kube/kubernetes-dynamic-pvc-2672ff6d-f6b5-11e8-a795-0a580a2a001c
+/dev/rbd0
+root@proxmox:/# mkdir /tmp/rbd
+root@proxmox:/# mount /dev/rbd0 /tmp/rbd
+root@proxmox:/# ls -al /tmp/rbd
+total 24
+drwxr-xr-x  3 root root  4096 Dec  2 23:37 .
+drwxrwxrwt 11 root root  4096 Dec  2 23:39 ..
+drwx------  2 root root 16384 Dec  2 23:37 lost+found
+-rw-r--r--  1 root root     0 Dec  2 23:37 SUCCESS
+root@proxmox:/# umount /tmp/rbd
+root@proxmox:/# rbd unmap /dev/rbd0
+```
