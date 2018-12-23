@@ -1,0 +1,4 @@
+deschedulerPolicy:
+  strategies:
+    RemoveDuplicates:
+      enabled: true
