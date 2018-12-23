@@ -1,5 +1,8 @@
 # nzbget usenet client
 
+![](https://i.imgur.com/2KQbi2w.png)
+
+
 ## installing
 
 ```shell

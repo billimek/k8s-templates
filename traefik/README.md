@@ -39,6 +39,8 @@ done
 
 ### configure auth0 site
 
+![](https://i.imgur.com/tmwP4U5.png)
+
 #### generic application setup
 
 Create a generic 'application' with the following set as _Allowed Callback URLs_:
@@ -50,6 +52,8 @@ Create a generic 'application' with the following set as _Allowed Callback URLs_
 Use the generated Client ID & Client Secret in the `auth0-forwardauth-values.yaml` configuration below
 
 #### email domain whitelist rule
+
+![](https://i.imgur.com/dBt6VcP.png)
 
 Create a new 'rule' for _Email domain whitelist_ with the following modifications to redirect authorization failures to a static site:
 

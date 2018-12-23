@@ -1,5 +1,7 @@
 # deluge torrent client
 
+![](https://i.imgur.com/HE3Ab40.png)
+
 ## installing
 
 ```shell

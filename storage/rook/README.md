@@ -2,6 +2,8 @@
 
 https://rook.io/
 
+**NOT USING THIS AT THE MOMENT**
+
 ## Preparing the proxmox host for OSDs
 
 ### Identify the drives

@@ -1,5 +1,7 @@
 ## modem-stats
 
+![](https://i.imgur.com/muHDysr.png)
+
 Based on this [custom helm chart](https://github.com/billimek/billimek-charts/tree/master/modem-stats)
 
 ### install

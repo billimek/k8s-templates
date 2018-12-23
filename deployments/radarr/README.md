@@ -1,5 +1,8 @@
 # radarr movie downloader
 
+![](https://i.imgur.com/eAgWySC.png)
+
+
 ## installing / upgrading
 
 ```shell

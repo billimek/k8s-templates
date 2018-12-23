@@ -1,5 +1,7 @@
 # External ceph cluster for kubernetes
 
+**NOT USING THIS AT THE MOMENT**
+
 https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd
 
 ## Setup
