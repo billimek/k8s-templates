@@ -67,6 +67,7 @@ Refer to and follow the following:
 * [plex](/deployments/plex)
 * [minecraft](/deployments/minecraft)
 * [kured](deployments/kured)
+* [descheduler](deployments/descheduler)
 
 ## Miscellaneous
 
