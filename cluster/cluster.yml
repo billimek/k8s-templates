@@ -15,12 +15,14 @@ nodes:
     user: ubuntu
     role: [controlplane,worker,etcd]
 ssh_agent_auth: true
+system_images:
+    etcd: rancher/coreos-etcd:v3.2.24
 services:
     kubelet:
       extra_args:
         read-only-port: 10255
       extra_binds:
-        - "/lib/modules:/lib/modules"
+      - "/lib/modules:/lib/modules"
     etcd:
       snapshot: true
       creation: 12h
