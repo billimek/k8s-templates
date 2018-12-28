@@ -1,10 +1,13 @@
-imageTag: 1.7.4
+imageTag: 1.7.6
 serviceType : LoadBalancer
 externalTrafficPolicy: Local
-loadBalancerIP: 10.0.7.80
-replicas: 3
+loadBalancerIP: 10.0.7.91
+replicas: 2
 memoryLimit: 100Mi
 cpuLimit: 1
+startupArguments:
+  - --ping
+  - --acme.dnschallenge.resolvers="8.8.8.8"
 debug:
   enabled: false
 rbac:
@@ -35,9 +38,11 @@ acme:
       - main: "*.ha.$DOMAIN"
   challengeType: dns-01
   dnsProvider:
-    name: digitalocean
-    digitalocean:
-      DO_AUTH_TOKEN: "$DO_AUTH_TOKEN"
+    name: cloudflare
+    cloudflare:
+      CLOUDFLARE_EMAIL: $EMAIL
+      CLOUDFLARE_API_KEY: "$CF_API_KEY"
+  delayBeforeCheck: 120
   persistence:
     enabled: false
 dashboard:
@@ -51,14 +56,10 @@ dashboard:
 deployment:
   hostPort:
     dashboardEnabled: true
-forwardAuth:
-  address: "http://auth0-forwardauth.default.svc.cluster.local/authorize"
-  trustForwardHeader: true
 keel:
-  policy: all
+  policy: "minor"
   trigger: poll
   pollSchedule: "@every 1h"
-  approvals: 1
   images:
     - repository: image
       tag: imageTag

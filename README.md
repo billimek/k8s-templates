@@ -51,7 +51,6 @@ Refer to and follow the following:
 * [speedtest](/deployments/speedtest)
 * [modem-stats](/deployments/modem-stats)
 * [uptimerobot](/deployments/uptimerobot)
-* [digitalocean-dyndns](/deployments/digitalocean-dyndns)
 * [unifi](/deployments/unifi)
 * [home-assistant](/deployments/home-assistant)
 * [node-red](/deployments/node-red)
