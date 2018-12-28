@@ -308,7 +308,7 @@ serverFiles:
             - nvr-server:9182
 
 keel:
-  policy: all
+  policy: minor
   trigger: poll
   pollSchedule: "@every 1h"
   images:

@@ -8,7 +8,7 @@ ingress:
     ingress.kubernetes.io/auth-url: "http://auth0-forwardauth.default.svc.cluster.local/authorize"
     ingress.kubernetes.io/auth-trust-headers: "true"
 keel:
-  policy: force
+  policy: "regexp:^([0-9][0-9][0-9])$"
   trigger: poll
   pollSchedule: "@every 1h"
   images:

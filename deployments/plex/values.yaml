@@ -1,5 +1,5 @@
 image:
-  tag: 1.13.9.5456-ecd600442
+  tag: 1.14.1.5488-cc260c476
 kubePlex:
   enabled: false
 ingress:
@@ -19,7 +19,7 @@ persistence:
     enabled: true
     claimName: nfs-media-pvc-10g
 keel:
-  policy: all
+  policy: "regexp:^([0-9]+.[0-9]+.[0-9]+.[0-9]+-.+)$"
   trigger: poll
   pollSchedule: "@every 1h"
   images:

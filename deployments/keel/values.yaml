@@ -1,11 +1,12 @@
 image:
-  tag: 0.13.0-rc1
+  tag: 0.13.0
 helmProvider:
   enabled: true
 slack:
   enabled: true
   botName: "keel"
   channel: "#notifications"
+  approvalsChannel: "#notifications"
 rbac:
   enabled: true
-debug: true
+debug: false

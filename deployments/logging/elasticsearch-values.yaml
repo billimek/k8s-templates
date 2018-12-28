@@ -1,9 +1,9 @@
-image:
-  tag: "6.4.3"
 master:
   persistence:
-    enabled: true
-    storageClass: "longhorn"
+    storageClass: "nfs-client"
+data:
+  persistence:
+    storageClass: "nfs-client"
 keel:
   policy: minor
   trigger: poll
