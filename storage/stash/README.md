@@ -21,10 +21,7 @@ curl -fsSL -o onessl https://github.com/kubepack/onessl/releases/download/0.3.0/
 ### Install the stash helm chart
 
 ```shell
-helm install appscode/stash --name stash-operator --version 0.7.0 \
-  --set apiserver.ca="$(onessl get kube-ca)" \
-  --set apiserver.enableValidatingWebhook=true \
-  --set apiserver.enableMutatingWebhook=true
+helm install appscode/stash --name stash-operator
 ```
 
 ### Create the stash restic secret for later use
