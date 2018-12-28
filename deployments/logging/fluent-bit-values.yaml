@@ -1,8 +1,10 @@
 backend:
   type: es
   es:
-    host: elasticsearch
+    host: elasticsearch-client
     port: 9200
+metrics:
+  enabled: true
 keel:
   policy: minor
   trigger: poll
