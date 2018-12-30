@@ -32,6 +32,7 @@ Otherwise, leverage helm charts and the built-in helm value-substitution mechani
 ## Installing the core system components
 Refer to and follow the following:
 
+1. [flux](flux/) - leverage flux-based GitOps to control cluster state.
 1. [kubernetes-dashboard](kubernetes-dashboard/) - creating the kubernetes-dashboard
 1. [heapster](heapster/) - standing-up a heapster deployment for the dashboard to use for deeper metrics
 1. [metallb](metallb/) - bare-metal LoadBalancer solution
