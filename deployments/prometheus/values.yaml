@@ -305,7 +305,7 @@ serverFiles:
         honor_labels: true
         static_configs:
           - targets:
-            - nvr-server:9182
+            - nvr:9182
 
 keel:
   policy: minor
