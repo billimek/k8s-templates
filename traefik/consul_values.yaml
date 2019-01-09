@@ -3,9 +3,8 @@ uiIngress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: "traefik"
-    ingress.kubernetes.io/auth-type: "forward"
-    ingress.kubernetes.io/auth-url: "http://auth0-forwardauth.default.svc.cluster.local/authorize"
-    ingress.kubernetes.io/auth-trust-headers: "true"
+    ingress.kubernetes.io/auth-type: "basic"
+    ingress.kubernetes.io/auth-secret: "traefik-basic-auth-jeff"
 keel:
   policy: all
   trigger: poll
